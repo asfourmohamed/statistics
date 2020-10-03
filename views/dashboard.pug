@@ -1,0 +1,57 @@
+extends layout/layout.pug
+
+block append style
+    link(href='/assets/css/bootstrap-select.min.css' rel='stylesheet')
+    link(href='/assets/css/admin.css' rel='stylesheet')
+    
+block append scripts
+    script(type='text/javascript', src='/assets/js/dashboard.js')
+
+block content
+    include layout/navbar.pug
+    #content
+        .container-fluid
+            .table-wrapper
+                .row(style='text-align: center; margin-bottom: 2%;')#dropdowns
+                    .col-4
+                        .card.border.mx-auto(style='max-width: 18rem;')
+                            .card-header selection operateur
+                            .card-body.text-primary
+                                select.step1#operator(name='operator')
+                                    option(value='') --Veuillez choisir une option--
+                                    option(value='IAM') IAM
+                                    option(value='INWI') IWNI
+                                    option(value='ORANGE') ORANGE
+                                h5.card-title 
+                    .col-4
+                        .card.border.mx-auto(style='max-width: 18rem;')
+                            .card-header selection marché
+                            .card-body.text-primary
+                                select.step2#marche(name='marche')
+                                    option(value='') --Veuillez choisir une option--
+                                    option(value='Prepaid') Prepaid
+                                    option(value='Postpaid') Postpaid
+                                    option(value='Home') Home      
+                                    option(value='B2B') B2B
+                                    option(value='Institutionnel') Institutionnel                       
+                                h5.card-title 
+                    .col-4
+                        .card.border.mx-auto(style='max-width: 18rem;')
+                            .card-header selection compagne
+                            .card-body.text-primary
+                                select.step3#compagne(name='compagne') 
+                                    option(value='') --compagne selectionné--
+                                h5.card-title 
+        #overlay
+            .cv-spinner
+                span.spinner
+        iframe#rapport(width='100%', height='100%', frameborder='0', src=dashboard)
+        
+    style(type='text/css').
+        .navbar-dark .navbar-nav .nav-link {
+        color: rgb(255, 255, 255);
+        height: 7%;
+        #content
+            {
+                position:absolute; left: 0; right: 0; bottom: 0; top: 7%; 
+            }}

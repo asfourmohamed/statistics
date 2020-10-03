@@ -1,0 +1,25 @@
+//- layout.pug
+html
+  head
+    title #{title}
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='refresh', content='1000')
+    script(src='/assets/js/jquery.min.js')
+    script(src='/assets/js/popper.js')
+    script(src='/assets/js/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href='/assets/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/assets/css/fontawesome/css/all.css')
+    link(rel='stylesheet', type='text/css', href='/assets/css/datatables.min.css')
+    script(type='text/javascript', src='/assets/js/datatables.js')
+    script(type='text/javascript', src='/assets/js/bootstrap-select.min.js')
+    script(type='text/javascript', src='/assets/js/cascadingdropdown.js')
+    link(rel='stylesheet',type='text/css', href='/assets/css/style.css')
+    link(rel='stylesheet',type='text/css', href='/assets/css/layout.css')
+    block scripts
+    block style
+  body
+    block content
+    //block foot
+    //  #footer
+    //    p Footer

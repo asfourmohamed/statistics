@@ -1,0 +1,18 @@
+extends layout/layout.pug
+
+block append style
+    link#bootstrap-css(href='/assets/css/index.css' rel='stylesheet')
+
+block content
+    .wrapper.fadeInDown
+        #formContent
+            if message
+                .alert.alert-primary(role='alert', style='margin-top: 40px; color: red;')
+                  | #{message}
+            form#formAuth(action='/login', method='post')
+                input#login.fadeIn.second(type='text' name='login' placeholder='login')
+                input#password.fadeIn.third(type='password' name='password' placeholder='password')
+                input#submit.fadeIn.fourth(type='submit' value='Connexion')
+            // Remind Passowrd
+            #formFooter
+                a.underlineHover(href='') interface de statistique &#169; 2020
