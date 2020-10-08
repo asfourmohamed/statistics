@@ -19,5 +19,8 @@ module.exports = (sequelize, types) => {
     Marche: { 
         type: types.STRING, 
         },
+    Compagne: { 
+        type: types.STRING, 
+        },
     
   },{})};

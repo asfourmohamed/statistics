@@ -10,7 +10,7 @@ router.get('/', function(req, res){
     }
     let response = [];
     Camps.findAll({
-        attributes: ['ID_Campagne'],
+        attributes: ['ID_Campagne','Compagne'],
         where: {
             Telco: req.query.operator,
             marche: req.query.marche,
@@ -18,7 +18,7 @@ router.get('/', function(req, res){
     }).then(result => {
         for (index = 0; index < result.length; index++) {
             response[index] = {
-                "label": result[index].dataValues.ID_Campagne,
+                "label": result[index].dataValues.Compagne,
                 "value": result[index].dataValues.ID_Campagne
             } 
         }
